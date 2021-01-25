@@ -1,24 +1,31 @@
 #include<iostream>
 #include<fstream>
-using namespace std;
 
-class Matrix{
+using namespace std;
+#ifndef MATRIX
+#define MATRIX
+#endif
+
+class matrix
+{
     private:
     int wiersze;
     int kolumny;
     double **tab;
-    
-	public:
-    Matrix(int & ,int &);
-    Matrix(int &);
-    Matrix(string &);
-    void set(int &n,int &m,double &val);
-    double get(int &n,int &m);
+
+    public:
+    matrix(int &,int &);
+    matrix(int &);
+    matrix(string &);
+    void set(int &,int &,double &);
+    double get(int &,int &);
     void print();
-    Matrix add(Matrix &m2);
-    Matrix substract(Matrix &m2);
-    Matrix multiply(Matrix &m2);
+    bool checkif(int &,int &);
+    void FailToOpen();
+    matrix add(matrix &);
+    matrix substract(matrix &);
+    matrix multiply(matrix &);
     int rows();
     int cols();
-    void store(string &filename, string &path);
+    void store(string &, string &);
 };
